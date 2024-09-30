@@ -1,0 +1,13 @@
+{
+  "resources/css/filament-scroll-navigator.css": {
+    "file": "assets/css/filament-scroll-navigator.css",
+    "src": "resources/css/filament-scroll-navigator.css",
+    "isEntry": true
+  },
+  "resources/js/filament-scroll-navigator.js": {
+    "file": "assets/js/filament-scroll-navigator2.js",
+    "name": "filament-scroll-navigator",
+    "src": "resources/js/filament-scroll-navigator.js",
+    "isEntry": true
+  }
+}
