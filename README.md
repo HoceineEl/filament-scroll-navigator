@@ -1,9 +1,5 @@
 # Filament Scroll Navigator
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/hoceineel/filament-scroll-navigator.svg?style=flat-square)](https://packagist.org/packages/hoceineel/filament-scroll-navigator)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hoceineel/filament-scroll-navigator/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/hoceineel/filament-scroll-navigator/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hoceineel/filament-scroll-navigator/fix-php-code-styling.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/hoceineel/filament-scroll-navigator/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/hoceineel/filament-scroll-navigator.svg?style=flat-square)](https://packagist.org/packages/hoceineel/filament-scroll-navigator)
 
 Filament Scroll Navigator is a sleek and efficient plugin for Filament admin panels that adds a dynamic scroll-to-top and scroll-to-bottom button. This enhances navigation on long pages, improving user experience and productivity.
 
