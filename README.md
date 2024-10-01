@@ -30,7 +30,7 @@ php artisan vendor:publish --tag="filament-scroll-navigator-views"
 ```
 
 After publishing, you can modify the button's appearance by editing the file:
-`resources/views/vendor/filament-scroll-navigator/components/scroll-button.blade.php`
+`resources/views/vendor/filament-scroll-navigator/components/scroller.blade.php`
 
 ## Testing
 
@@ -60,18 +60,4 @@ Please review [our security policy](../../security/policy) on how to report secu
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 ```
 
-This README:
-
-1. Updates the package name and GitHub links to match your package.
-2. Provides a brief description of the Filament Scroll Navigator.
-3. Lists key features of the package.
-4. Gives clear installation instructions.
-5. Explains basic usage and how to customize the package.
-6. Includes sections for testing, changelog, contributing, security, credits, and license.
-
-You can further customize this README by:
-
-- Adding screenshots or GIFs demonstrating the scroll navigator in action.
-- Including more detailed usage examples if there are additional configuration options.
-- Mentioning any specific requirements or compatibility notes.
 

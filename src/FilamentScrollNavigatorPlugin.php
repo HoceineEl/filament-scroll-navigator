@@ -2,6 +2,7 @@
 
 namespace HoceineEl\FilamentScrollNavigator;
 
+use Closure;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 use Filament\View\PanelsRenderHook;
@@ -9,6 +10,8 @@ use HoceineEl\FilamentScrollNavigator\Components\ScrollNavigator;
 
 class FilamentScrollNavigatorPlugin implements Plugin
 {
+    public string $color = 'primary';
+
     public function getId(): string
     {
         return 'filament-scroll-navigator';
@@ -21,7 +24,7 @@ class FilamentScrollNavigatorPlugin implements Plugin
         $panel
             ->renderHook(
                 PanelsRenderHook::BODY_END,
-                fn() => ScrollNavigator::make()->render()->render()
+                fn() => view('filament-scroll-navigator::components.scroller', ['color' => $this->color]),
             );
     }
 
@@ -36,5 +39,12 @@ class FilamentScrollNavigatorPlugin implements Plugin
         $plugin = filament(app(static::class)->getId());
 
         return $plugin;
+    }
+
+    public function color(string | Closure  $color): static
+    {
+
+        $this->color = $color instanceof Closure ? $color() : $color;
+        return $this;
     }
 }
