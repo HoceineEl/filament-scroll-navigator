@@ -1,0 +1,69 @@
+{
+    "name": "hoceineel/filament-scroll-navigator",
+    "description": "A Filament plugin for smooth scrolling navigation",
+    "keywords": [
+        "hoceineel",
+        "laravel",
+        "filament",
+        "scroll-navigator",
+        "filament-scroll-navigator",
+        "scroll-to-bottom",
+        "scroll-to-top"
+    ],
+    "homepage": "https://github.com/hoceineel/filament-scroll-navigator",
+    "support": {
+        "issues": "https://github.com/hoceineel/filament-scroll-navigator/issues",
+        "source": "https://github.com/hoceineel/filament-scroll-navigator"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hoceine EL Idrissi",
+            "email": "contact@hoceine.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "filament/filament": "^3.0",
+        "spatie/laravel-package-tools": "^1.15.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "HoceineEl\\FilamentScrollNavigator\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HoceineEl\\FilamentScrollNavigator\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "format": "vendor/bin/pint",
+        "build-assets": [
+            "@npm install",
+            "@npm run build"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HoceineEl\\FilamentScrollNavigator\\FilamentScrollNavigatorServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
