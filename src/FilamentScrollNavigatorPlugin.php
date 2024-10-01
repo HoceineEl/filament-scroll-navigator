@@ -4,6 +4,7 @@ namespace HoceineEl\FilamentScrollNavigator;
 
 use Closure;
 use Filament\Contracts\Plugin;
+use Filament\Facades\Filament;
 use Filament\Panel;
 use Filament\View\PanelsRenderHook;
 use HoceineEl\FilamentScrollNavigator\Components\ScrollNavigator;
@@ -17,16 +18,15 @@ class FilamentScrollNavigatorPlugin implements Plugin
         return 'filament-scroll-navigator';
     }
 
-    public function register(Panel $panel): void {}
-
-    public function boot(Panel $panel): void
+    public function register(Panel $panel): void
     {
-        $panel
-            ->renderHook(
-                PanelsRenderHook::BODY_END,
-                fn() => view('filament-scroll-navigator::components.scroller', ['color' => $this->color]),
-            );
+        Filament::registerRenderHook(
+            PanelsRenderHook::BODY_END,
+            fn() => view('filament-scroll-navigator::components.scroller', ['color' => $this->color]),
+        );
     }
+
+    public function boot(Panel $panel): void {}
 
     public static function make(): static
     {

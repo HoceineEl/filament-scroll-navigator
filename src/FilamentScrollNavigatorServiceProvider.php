@@ -52,6 +52,8 @@ class FilamentScrollNavigatorServiceProvider extends PackageServiceProvider
             $this->getAssetPackageName()
         );
 
+
+
         FilamentAsset::register([
             Css::make('filament-scroll-navigator-styles', __DIR__ . '/../dist/assets/css/filament-scroll-navigator.css'),
             Js::make('filament-scroll-navigator-scripts', __DIR__ . '/../dist/assets/js/filament-scroll-navigator2.js'),
