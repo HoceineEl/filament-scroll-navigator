@@ -12,31 +12,50 @@ use HoceineEl\FilamentScrollNavigator\Components\ScrollNavigator;
 
 class FilamentScrollNavigatorPlugin implements Plugin
 {
-    public string | Color | Closure $color = 'primary';
+    public string | array $color = 'primary';
 
     public function getId(): string
     {
         return 'filament-scroll-navigator';
     }
 
-    public function color(Color|string|Closure $color): static
+    public function color(string|array|Closure $color): static
     {
         $this->color = $color instanceof Closure ? $color() : $color;
         return $this;
     }
+
 
     public function register(Panel $panel): void
     {
         Filament::registerRenderHook(
             PanelsRenderHook::BODY_END,
             function () {
-                $colorValue = $this->color instanceof Color
-                    ? $this->color[500]
-                    : $this->color;
+                $colorValue = $this->getColorValue();
 
-                return view('filament-scroll-navigator::components.scroller', ['color' => $colorValue]);
+                return view('filament-scroll-navigator::components.scroller', [
+                    'color' => $colorValue,
+                ]);
             },
         );
+    }
+
+    protected function getColorValue(): string
+    {
+        if (is_string($this->color)) {
+            return $this->color;
+        }
+
+        if (is_array($this->color) && isset($this->color[500])) {
+            return $this->color[500];
+        }
+
+        $colorName = array_search($this->color, (new \ReflectionClass(Color::class))->getConstants());
+        if ($colorName !== false) {
+            return strtolower($colorName);
+        }
+
+        return 'primary';
     }
 
     public function boot(Panel $panel): void {}
